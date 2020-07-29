@@ -37,10 +37,10 @@ import MapKit
  - Note:
  `LocationItem` provides some get-only computed property to access properties of `MKMapItem` object more easily.
  
-        var name: String
-        var coordinate: (latitude: Double, longitude: Double)
-        var addressDictionary: [NSObject: AnyObject]?
-        var formattedAddressString: String?
+ var name: String
+ var coordinate: (latitude: Double, longitude: Double)
+ var addressDictionary: [NSObject: AnyObject]?
+ var formattedAddressString: String?
  
  This class provides two initialization methods, you can either provide a `MKMapItem` object or provide a coordinate and an address dictionary to initialize.
  
@@ -50,8 +50,8 @@ import MapKit
  
  Objects of this class can be encoded and decoded.
  
-        let locationData = NSKeyedArchiver.archivedDataWithRootObject(locationItem)
-        let locationItem = NSKeyedUnarchiver.unarchiveObjectWithData(locationData) as! LocationItem
+ let locationData = NSKeyedArchiver.archivedDataWithRootObject(locationItem)
+ let locationItem = NSKeyedUnarchiver.unarchiveObjectWithData(locationData) as! LocationItem
  */
 open class LocationItem: NSObject, NSCoding {
     
@@ -120,7 +120,7 @@ open class LocationItem: NSObject, NSCoding {
     open override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as AnyObject? else { return false }
         return object.hash == hash
-    }    
+    }
     
     public required convenience init(coder aDecoder: NSCoder) {
         let latitude = aDecoder.decodeDouble(forKey: "latitude")
